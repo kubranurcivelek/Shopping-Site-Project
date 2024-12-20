@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <form action="/search" method="get">
+            <input type="text" name="q" placeholder="Search for products..." value="<%= searchQuery %>">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+    <main>
+        <h1>Search Results</h1>
+        <% if (products.length > 0) { %>
+            <div class="product-list">
+                <% products.forEach(product => { %>
+                    <div class="product">
+                        <a href="/product/<%= product.id %>">
+                            <img src="<%= product.image %>" alt="<%= product.name %>">
+                            <h3><%= product.name %></h3>
+                            <p><%= product.price %></p>
+                        </a>
+                    </div>
+                <% }); %>
+            </div>
+        <% } else { %>
+            <p>No products found for "<%= searchQuery %>".</p>
+        <% } %>
+    </main>
+</body>
+</html>
