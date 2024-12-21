@@ -19,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.render('home', { products }); // Placeholder for now
 });
+
 app.get('/search', (req, res) => {
     const searchQuery = req.query.q?.toLowerCase() || ''; // Get the search query
     const filteredProducts = products.filter(product =>
@@ -27,6 +28,17 @@ app.get('/search', (req, res) => {
         product.category.toLowerCase().includes(searchQuery)
     );
     res.render('search', { products: filteredProducts, searchQuery });
+});
+
+app.get('/product/:id', (req, res) => {
+    const productId = parseInt(req.params.id, 10); // Extract product ID from the URL
+    const product = products.find(p => p.id === productId); // Find the product by ID
+
+    if (!product) {
+        return res.status(404).send('Product not found');
+    }
+
+    res.render('detail', { product }); // Render the detail view with the product
 });
 
 

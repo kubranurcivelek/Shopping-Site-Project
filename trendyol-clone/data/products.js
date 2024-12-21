@@ -1,6 +1,6 @@
 const products = [
     { id: 1, name: "Trendyolmilla Siyah Pantolon", description: "High-waist black pants", price: "199.99 TL", image: "/images/pant1.jpg", category: "Clothing" },
-    { id: 2, name: "EmModaStyle Çizgili Kazak", description: "Striped knit sweater", price: "145.00 TL", image: "/images/kazak1.jpg", category: "Clothing" },
+    { id: 2, name: "EmModaStyle Çizgili Kazak", description: "Striped knit sweater", price: "145.00 TL", image: "/images/pant1.jpg", category: "Clothing" },
     { id: 3, name: "FV Palazzo Pantolon", description: "Oversized Palazzo Pants", price: "249.99 TL", image: "/images/pant2.jpg", category: "Clothing" },
     { id: 4, name: "Siyah Pamuklu Pijama Takımı", description: "Comfortable black pajama set", price: "185.91 TL", image: "/images/pijama.jpg", category: "Loungewear" },
     { id: 5, name: "Toparlayıcı Tayt", description: "Elastic black leggings", price: "193.99 TL", image: "/images/tayt.jpg", category: "Sportswear" },
